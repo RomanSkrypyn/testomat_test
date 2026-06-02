@@ -1,0 +1,12 @@
+<div class="px-4 py-3 hover:bg-slate-50 transition border-b border-slate-50 last:border-0 flex items-start space-x-3 <%= 'bg-blue-50/40' if notification.unread? %>">
+  <div class="flex-1 min-w-0">
+    <p class="text-xs text-slate-700 leading-snug">Mentioned by <b><%= notification.comment.user.username %></b></p>
+    <p class="text-xs text-slate-700 leading-snug"><i><%= notification.comment.body %></i></p>
+    <span class="text-[10px] text-slate-400 mt-1 block font-medium"><%= t('.ago', time: time_ago_in_words(notification.created_at)) %></span>
+  </div>
+  <% if notification.unread? %>
+    <%= button_to read_notification_path(notification), method: :post, class: "text-[10px] text-blue-500 hover:text-blue-700 bg-transparent border-0 cursor-pointer p-1 font-semibold", aria: { label: "Mark as read" } do %>
+      <span class="h-2 w-2 bg-blue-500 rounded-full block"></span>
+    <% end %>
+  <% end %>
+</div>

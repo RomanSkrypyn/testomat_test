@@ -1,0 +1,101 @@
+# Files in the config/locales directory are used for internationalization and
+# are automatically loaded by Rails. If you want to use locales other than
+# English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more about the API, please read the Rails Internationalization guide
+# at https://guides.rubyonrails.org/i18n.html.
+#
+# Be aware that YAML interprets the following case-insensitive strings as
+# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
+# must be quoted to be interpreted as strings. For example:
+#
+#     en:
+#       "yes": yup
+#       enabled: "ON"
+
+en:
+  hello: "Hello world"
+  pages:
+    home:
+      welcome: "Welcome back, %{email}!"
+      sign_out: "Sign Out"
+      comments_title: "Comments"
+      no_comments: "No comments yet. Be the first to share your thoughts!"
+      post_comment_title: "Post a Comment"
+      sign_in_to_comment: "Sign in to post a comment"
+      sign_in: "Sign In"
+      notifications_heading: "Notifications"
+      mark_all_read: "Mark all as read"
+      ago: "%{time} ago"
+      no_notifications: "No notifications"
+  comments:
+    comment:
+      edit: "Edit"
+      delete: "Delete"
+      confirm_delete: "Are you sure?"
+      edited: "(edited)"
+      submit: "Save"
+      cancel: "Cancel"
+    form:
+      label: "Your Comment"
+      placeholder: "Share your thoughts..."
+      submit: "Post Comment"
+      cancel: "Cancel"
+    create:
+      success: "Comment created successfully"
+    update:
+      success: "Comment updated successfully"
+    destroy:
+      success: "Comment deleted successfully"
+      unauthorized: "You can only edit or delete your own comments"
+  users:
+    registrations:
+      new:
+        title: "Create Account"
+        subtitle: "Join us today and get started"
+        minimum_password_length: "(%{count} characters minimum)"
+        submit: "Sign up"
+    sessions:
+      new:
+        title: "Welcome Back"
+        subtitle: "Log in to your account"
+        submit: "Log in"
+    confirmations:
+      new:
+        title: "Confirm Your Email"
+        subtitle: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
+    passwords:
+      new:
+        title: "Reset Password"
+        subtitle: "Enter your email to receive reset instructions"
+        submit: "Send me password reset instructions"
+      edit:
+        title: "Change Password"
+        subtitle: "Enter your new password below"
+        new_password: "New password"
+        confirm_new_password: "Confirm new password"
+        minimum_password_length: "(%{count} characters minimum)"
+        submit: "Change my password"
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_password: "Forgot your password?"
+        resend_confirmation: "Didn't receive confirmation instructions?"
+        resend_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with %{provider}"
