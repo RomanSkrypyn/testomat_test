@@ -1,0 +1,25 @@
+<%- if controller_name != 'sessions' %>
+  <p><%= link_to t('.log_in'), new_session_path(resource_name), class: "text-blue-400 hover:text-blue-300 font-medium transition" %></p>
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <p><%= link_to t('.sign_up'), new_registration_path(resource_name), class: "text-blue-400 hover:text-blue-300 font-medium transition" %></p>
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <p><%= link_to t('.forgot_password'), new_password_path(resource_name), class: "text-blue-400 hover:text-blue-300 font-medium transition" %></p>
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <p><%= link_to t('.resend_confirmation'), new_confirmation_path(resource_name), class: "text-blue-400 hover:text-blue-300 font-medium transition" %></p>
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <p><%= link_to t('.resend_unlock'), new_unlock_path(resource_name), class: "text-blue-400 hover:text-blue-300 font-medium transition" %></p>
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <p><%= button_to t('.sign_in_with', provider: OmniAuth::Utils.camelize(provider)), omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "w-full bg-slate-100 hover:bg-slate-200 text-slate-900 font-medium py-2 px-4 rounded-lg transition" %></p>
+  <% end %>
+<% end %>
